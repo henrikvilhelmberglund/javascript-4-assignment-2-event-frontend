@@ -1,0 +1,31 @@
+Typ av Event är helt valfritt men om ni får slut på fantasi så finns några exempel här.
+
+Artist Event
+DreamHack
+Comic Cons
+MovieGeeks
+Dansbandsveckan
+Göteborgsvarvet
+Stockholms maraton
+Vasaloppet
+Applikationen ska innehålla
+En startsida, som t ex visar var någonstans Eventet går av stapeln med datum och tidpunkter.
+En sida med listning av intresse områden för Eventet.
+En sida som presenterar mer detaljer om ett visst valt område
+En sida med möjlighet att köpa biljetter
+Utförande
+☐ Applikationen ska bestå av en klient del som ska vara skriven i React och med TypeScript 
+☐ samt en backend del som ska vara utvecklad med Node.js och express. 
+☐ Som databas för lagring av information kan t ex en json fil användas, t ex tillsammans med json-server.
+
+Bedömning
+☐ För Godkänt(G) krävs att applikationen fungerar, givetvis. 
+☐ Dessutom så ska Clean Code 
+☐ samt DRY principerna efterföljas. 
+☐ Dessutom vill jag att ni följer KISS(Keep It Simple Stupid) principen.
+
+☐ För Väl Godkänd(VG) krävs att backend är skriven med E6 moduler(import och export) syntax 
+☐ och med MV* design principerna.
+
+Inlämning
+☐ Ska ske via Studentportalen och vara i en zip fil med både klient och server applikationerna.
