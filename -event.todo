@@ -1,0 +1,28 @@
+Call of Cthulhu-event
+
+Routes:
+  ☐ / med bakgrundsbild, info om eventet (var, när, tider)
+  ☐ /areas med lista av olika händelser/saker man kan göra på eventet som man kan klicka på för att komma till /details/:area
+  ☐ /details/:area med mer detaljerad info om en area med bild, text etc
+  ☐ /purchase där man kan köpa en biljett via form som sparas i API:t med hjälp av JSON server
+
+Areas:
+  ☐ Bokområde med gamla böcker i stil av Call of Cthulhu (Necronomicon etc), kan också köpa RGB-böckerna här
+  ☐ Fotoområde med gammaldags inredning och ombyte så man kan se ut som en "investigator" och ta kort, kan även be en fotograf ta professionella bilder mot betalning
+  ☐ Stageområde med live-rollspel av ett Call of Ctulhu-äventyr med geniet Karl-Fredrik som Keeper och populära gäster som investigators
+  ☐ Monsterområde med professionellt gjorda enorma props som introducerar olika monster från Call of Ctulhu
+
+Stuff that needs to be done: 
+  ☐ Get images for index page and each area
+  ☐ Upload images to Github pages (/docs or whatever branch)
+  Add API routes in JSON-server file and Express API:
+    ☐ /index with image, maybe random? where/when/times in API
+    ☐ /areas with all area names, short description and image links
+    ☐ /details/:area with area name, long description, image
+  ☐ Add layout with header containing links for all the routes
+  ☐ Add routes and components that display data
+  ☐ Add unit tests
+  ☐ Add integration test
+  ☐ Add end to end test
+  ☐ Add loaders/actions for the things that need it (/details/:area, /purchase)
+  ☐ Mobile styling
