@@ -16,10 +16,10 @@ Stuff that needs to be done:
   ✔ Get images for index page and each area @done(23-11-18 15:30)
   ✔ Upload images to Github pages (/docs or whatever branch) @done(23-11-18 15:30)
   ✔ Add index route with background image and info (when/where/times) @done(23-11-18 16:43)
+  ✔ Add layout with header containing links for all the routes @done(23-11-18 16:45)
   Add API routes in JSON-server file and Express API:
     ☐ /areas with all area names, short description and image links
     ☐ /details/:area with area name, long description, image
-  ☐ Add layout with header containing links for all the routes
   ☐ Add routes and components that display data
   ☐ Add unit tests
   ☐ Add integration test
