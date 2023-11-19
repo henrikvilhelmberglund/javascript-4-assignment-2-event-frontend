@@ -1,11 +1,14 @@
-import { IShortAreaData } from '../../lib/interfaces/areas';
+import { IShortAreaData } from '../../lib/interfaces/IAreas';
 
 export default function Area({ id, name, image_url: imageUrl }: IShortAreaData) {
-  return (
-    <a style={{ backgroundImage: `url(${imageUrl})` }} className="m-4 px-10 hover:outline-1 outline-solid outline-0 outline-emerald-500 w-min bg-cover  bg-black/60 bg-blend-multiply" href={`/details/${id}`}>
-		<article>
-      <h2 className="font-elite text-center text-emerald-500 relative top-6  w-96 text-5xl">{name}</h2>
-		</article>
-    </a>
+	return (
+		<a
+			style={{ backgroundImage: `url(${imageUrl})` }}
+			className="outline-solid m-4 w-min bg-black/60 bg-cover px-10 bg-blend-multiply outline-0  outline-emerald-500 hover:outline-1"
+			href={`/details/${id}`}>
+			<article>
+				<h2 className="font-elite relative top-6 w-96 text-center  text-5xl text-emerald-500">{name}</h2>
+			</article>
+		</a>
 	);
 }
