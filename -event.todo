@@ -1,16 +1,15 @@
 Call of Cthulhu-event
 
 Routes:
-  ☐ / med bakgrundsbild, info om eventet (var, när, tider)
-  ☐ /areas med lista av olika händelser/saker man kan göra på eventet som man kan klicka på för att komma till /details/:area
-  ☐ /details/:area med mer detaljerad info om en area med bild, text etc
+  ✔ / med bakgrundsbild, info om eventet (var, när, tider) @done(23-11-20 14:27)
+  ✔ /areas med lista av olika händelser/saker man kan göra på eventet som man kan klicka på för att komma till /details/:area @done(23-11-20 14:27)
+  ✔ /details/:area med mer detaljerad info om en area med bild, text etc @done(23-11-20 14:27)
   ☐ /tickets där man kan köpa en biljett via form som sparas i API:t med hjälp av JSON server
 
 Areas:
-  ☐ Bokområde med gamla böcker i stil av Call of Cthulhu (Necronomicon etc), kan också köpa RGB-böckerna här
-  ☐ Fotoområde med gammaldags inredning och ombyte så man kan se ut som en "investigator" och ta kort, kan även be en fotograf ta professionella bilder mot betalning
-  ☐ Stageområde med live-rollspel av ett Call of Ctulhu-äventyr med geniet Karl-Fredrik som Keeper och populära gäster som investigators
-  ☐ Monsterområde med professionellt gjorda enorma props som introducerar olika monster från Call of Ctulhu
+  ✔ Bokområde med gamla böcker i stil av Call of Cthulhu (Necronomicon etc), kan också köpa RGB-böckerna här @done(23-11-20 14:27)
+  ✔ Fotoområde med gammaldags inredning och ombyte så man kan se ut som en "investigator" och ta kort, kan även be en fotograf ta professionella bilder mot betalning @done(23-11-20 14:27)
+  ✔ Stageområde med live-rollspel av ett Call of Ctulhu-äventyr med geniet Karl-Fredrik som Keeper och populära gäster som investigators @done(23-11-20 14:27)
 
 Stuff that needs to be done: 
   ✔ Get images for index page and each area @done(23-11-18 15:30)
@@ -18,9 +17,10 @@ Stuff that needs to be done:
   ✔ Add index route with background image and info (when/where/times) @done(23-11-18 16:43)
   ✔ Add layout with header containing links for all the routes @done(23-11-18 16:45)
   Add API routes in JSON-server file and Express API:
-    ☐ /areas with all area names, short description and image links
-    ☐ /details/:area with area name, long description, image
-  ☐ Add routes and components that display data
+    ✔ /areas with all area names, short description and image links @done(23-11-20 14:01)
+    ✔ /details/:area with area name, long description, image @done(23-11-20 14:27)
+  ✔ Add routes and components that display data @done(23-11-20 14:28)
+  ☐ Add /tickets route
   ☐ Add unit tests
   ☐ Add integration test
   ☐ Add end to end test
