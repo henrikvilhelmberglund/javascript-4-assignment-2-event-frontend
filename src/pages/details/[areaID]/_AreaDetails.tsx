@@ -6,10 +6,15 @@ export default function AreaDetails({ name, image_url: imageUrl, description }: 
 		<article
 			style={{ backgroundImage: `url(${imageUrl})` }}
 			className="outline-solid flex h-[80vh] w-full flex-col items-center bg-black/70 bg-cover bg-blend-multiply">
-      <h2 className="font-elite relative top-6 w-96 text-center text-5xl text-emerald-500">{name}</h2>
-      {/* TODO display always on mobile */}
-			<section style={{ backgroundImage: `url(${bookImage})` }} className="hover:opacity-100 opacity-0 transition-all duration-500 mt-12 bg-black bg-cover">
-				<div className="flex w-[70vw] h-[34vw] flex-col p-4 flex-wrap">{description && description.split('\n').map((paragraph) => <p className="font-elite first-letter:text-xl px-4 w-[35vw] text-black ">{paragraph}</p>)}</div>
+			<h2 className="font-elite relative top-6 w-96 text-center text-5xl text-emerald-500">{name}</h2>
+			{/* TODO display always on mobile */}
+			<img src={imageUrl} className="md:hidden" alt="" />
+			<section
+				style={{ backgroundImage: `url(${bookImage})` }}
+				className="md:hover:opacity-99 opacity-99 mt-12 bg-black bg-cover transition-all duration-500 md:w-[40vw] md:opacity-3">
+				<div className="flex flex-col p-4">
+					{description && description.split('\n').map((paragraph) => <p className="font-elite px-4 text-black first-letter:text-lg ">{paragraph}</p>)}
+				</div>
 			</section>
 		</article>
 	);
