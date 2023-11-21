@@ -2,12 +2,19 @@ import { atom, useAtom } from 'jotai';
 import indexImage from '../../../src/assets/andree-wallin-1118.webp';
 import { ActionFunctionArgs, Form } from 'react-router-dom';
 
-const ticketTypeAtom = atom('regular');
-const ticketAmountAtom = atom(1);
+const ticketTypeAtom = atom<string>('regular');
+const ticketAmountAtom = atom<number>(1);
 
 export async function Action({ request }: ActionFunctionArgs) {
 	let formData = await request.formData();
 	console.log(Object.fromEntries(formData));
+
+	let postFormData = JSON.stringify(Object.fromEntries(formData));
+
+	const response = await fetch('http://localhost:3002/api/v1/tickets', { method: 'POST', body: postFormData, headers: { 'content-type': 'application/json' } });
+	const result = await response.json();
+	console.log(result);
+
 	return Object.fromEntries(formData);
 }
 
@@ -15,7 +22,7 @@ export default function Index() {
 	const [ticketType, setTicketType] = useAtom(ticketTypeAtom);
 	const [ticketAmount, setTicketAmount] = useAtom(ticketAmountAtom);
 
-	const totalAmount = ticketType === 'regular' ? ticketAmount * 500 : ticketAmount * 1500;
+	const totalAmount: number = ticketType === 'regular' ? ticketAmount * 500 : ticketAmount * 1500;
 
 	return (
 		<main className={`bg-[url(${indexImage})] flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
