@@ -1,6 +1,12 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLoaderData } from 'react-router-dom';
+import { ITicketsResponse } from '../lib/interfaces/ITickets';
+
+export async function Loader() {
+	return fetch('http://localhost:3002/api/v1/tickets');
+}
 
 export default function Layout() {
+	const { data } = useLoaderData() as ITicketsResponse;
 	return (
 		<>
 			<div className="min-h-screen">
@@ -15,9 +21,14 @@ export default function Layout() {
 						<Link className="nav-button" to="/tickets">
 							Tickets
 						</Link>
+						{data && data.length !== 0 ? (
+							<Link className="nav-button" to="/my-tickets">
+								My Tickets
+							</Link>
+						) : null}
 					</nav>
 				</header>
-				<Outlet />
+				<Outlet context={data} />
 				<footer className="fixed bottom-2 right-2">Footer</footer>
 			</div>
 		</>
