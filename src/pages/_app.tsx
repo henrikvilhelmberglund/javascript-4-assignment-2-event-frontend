@@ -1,4 +1,4 @@
-import { Link, Outlet, useLoaderData } from 'react-router-dom';
+import { NavLink, Outlet, useLoaderData } from 'react-router-dom';
 import { ITicketsResponse } from '../lib/interfaces/ITickets';
 
 export async function Loader() {
@@ -12,24 +12,26 @@ export default function Layout() {
 			<div className="min-h-screen">
 				<header>
 					<nav className="border-1 flex items-center justify-center gap-12 border-black bg-black bg-gradient-to-b from-black to-[#0a1518] pt-4">
-						<Link className="nav-button" to="/" unstable_viewTransition>
+						<NavLink className="nav-button" to="/" unstable_viewTransition>
 							Home
-						</Link>
-						<Link className="nav-button" to="/areas" unstable_viewTransition>
+						</NavLink>
+						<NavLink className="nav-button" to="/areas" unstable_viewTransition>
 							Areas
-						</Link>
-						<Link className="nav-button" to="/tickets" unstable_viewTransition>
+						</NavLink>
+						<NavLink className="nav-button" to="/tickets" unstable_viewTransition>
 							Tickets
-						</Link>
+						</NavLink>
 						{data && data.length !== 0 ?
-							<Link className="nav-button" to="/my-tickets" unstable_viewTransition>
+							<NavLink className="nav-button" to="/my-tickets" unstable_viewTransition>
 								My Tickets
-							</Link>
+							</NavLink>
 						:	null}
 					</nav>
 				</header>
 				<Outlet context={data} />
-				<footer className="fixed bottom-2 right-2">Footer</footer>
+        <footer className="fixed bottom-2 right-2">Footer</footer>
+        {/* putting active in UnoCSS safelist breaks stuff for some reason */}
+				<aside className="active hidden"></aside>
 			</div>
 		</>
 	);
