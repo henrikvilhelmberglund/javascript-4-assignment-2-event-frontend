@@ -1,13 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+import { Form } from 'react-router-dom';
 import { ITicket } from '../../lib/interfaces/ITickets';
-
-// TODO do this with Action in /my-tickets instead 
-
-async function cancelTicket(id) {
-	const response = await fetch(`http://localhost:3002/api/v1/tickets/${id}`, { method: 'DELETE' });
-	const result = await response.json();
-	window.location.href = '/my-tickets';
-}
 
 export default function Ticket({ id, name, email, ticketType, ticketAmount }: ITicket) {
 	return (
@@ -20,9 +12,10 @@ export default function Ticket({ id, name, email, ticketType, ticketAmount }: IT
 					<p className="text-2xl">{name}</p>
 					<p>{email}</p>
 				</div>
-				<button onClick={() => cancelTicket(id)} className="absolute right-0 top-0 text-4xl">
-					❌
-				</button>
+				<Form action="/my-tickets?index" method="DELETE">
+					<input type="text" className="hidden" value={id.toString()} name="id" />
+					<button className="absolute right-0 top-0 text-4xl">❌</button>
+				</Form>
 			</article>
 		</main>
 	);
