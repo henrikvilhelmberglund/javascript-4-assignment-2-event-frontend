@@ -5,5 +5,6 @@
 	"trailingComma": "es5",
 	"printWidth": 160,
 	"plugins": ["prettier-plugin-tailwindcss"],
-	"tailwindFunctions": ["tw"]
+	"tailwindFunctions": ["tw"],
+  "experimentalTernaries": true
 }
