@@ -18,6 +18,7 @@ export default defineConfig({
 	shortcuts: [
 		{
 			'nav-button': 'rounded-lg p-4 font-elite text-emerald-500 hover:underline underline-1 underline-offset-4 transition-all text-4xl',
+			active: 'rounded-lg p-4 font-elite text-emerald-300 hover:underline underline-1 underline-offset-4 transition-all text-4xl',
 		},
 		[/^btn-(.*)$/, ([, c]) => `bg-${c}-400 text-${c}-800 text-xl p-4 rounded-lg transition-all hover:bg-${c}-300`],
 	],
@@ -25,7 +26,9 @@ export default defineConfig({
 		...Array.from({ length: 26 }, (_, i) => String.fromCharCode('a'.charCodeAt(0) + i)).map((char) => `font-${char}`),
 		...createSafeList(),
 		`font-thin font-extralight font-light font-normal font-medium font-semibold font-bold font-extrabold font-black
-        btn-primary btn-secondary`, "bg-[url(/src/assets/andree-wallin-1118.webp)]"
+        btn-primary btn-secondary`,
+		'bg-[url(/src/assets/andree-wallin-1118.webp)]',
+		'active',
 	],
 	variants: [
 		{
