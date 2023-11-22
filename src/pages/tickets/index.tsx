@@ -1,11 +1,15 @@
-import { atom, useAtom } from 'jotai';
-import indexImage from '../../../src/assets/andree-wallin-1118.webp';
+import { atom, getDefaultStore, useAtom } from 'jotai';
+import indexImage from '/src/assets/andree-wallin-1118.webp';
 import { ActionFunctionArgs, Form } from 'react-router-dom';
+import DisplayMessage from '../../lib/components/DisplayMessage';
 
 const ticketTypeAtom = atom<string>('regular');
 const ticketAmountAtom = atom<number>(1);
+const messageTextAtom = atom<string>('');
 
 export async function Action({ request }: ActionFunctionArgs) {
+	const defaultStore = getDefaultStore();
+
 	let formData = await request.formData();
 	console.log(Object.fromEntries(formData));
 
@@ -14,6 +18,19 @@ export async function Action({ request }: ActionFunctionArgs) {
 	const response = await fetch('http://localhost:3002/api/v1/tickets', { method: 'POST', body: postFormData, headers: { 'content-type': 'application/json' } });
 	const result = await response.json();
 	console.log(result);
+	if (result.statusCode === 201) {
+		console.log(defaultStore.get(messageTextAtom));
+    if (defaultStore.get(messageTextAtom) !== '') {
+      // TODO fix this, make a message appear each time button is clicked nicely somehow
+			defaultStore.set(messageTextAtom, '');
+		}
+		console.info('nice');
+		defaultStore.set(messageTextAtom, 'Successfully bought tickets!');
+
+		setTimeout(() => {
+			defaultStore.set(messageTextAtom, '');
+		}, 1100);
+	}
 
 	return Object.fromEntries(formData);
 }
@@ -21,11 +38,12 @@ export async function Action({ request }: ActionFunctionArgs) {
 export default function Index() {
 	const [ticketType, setTicketType] = useAtom(ticketTypeAtom);
 	const [ticketAmount, setTicketAmount] = useAtom(ticketAmountAtom);
+	const [messageText, setMessageText] = useAtom(messageTextAtom);
 
 	const totalAmount: number = ticketType === 'regular' ? ticketAmount * 500 : ticketAmount * 1500;
 
 	return (
-		<main className={`bg-[url(${indexImage})] flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
+		<main style={{ backgroundImage: `url(${indexImage})` }} className={`flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
 			<h1 className="font-heading drop-shadow-color-black pt-8 text-7xl text-emerald-500 drop-shadow-lg">Tickets</h1>
 			<h2 className="font-elite mt-6 text-3xl text-emerald-500">Make sure to purchase your tickets in time.</h2>
 			<Form
@@ -51,6 +69,9 @@ export default function Index() {
 				<p className="text-emerald-500">Total: {totalAmount} SEK</p>
 				<button className="rounded bg-emerald-500 p-4">Purchase</button>
 			</Form>
+			{messageText !== '' ?
+				<DisplayMessage duration={1000} text={messageText} />
+			:	null}
 		</main>
 	);
 }
