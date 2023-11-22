@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import AreaDetails from './_AreaDetails';
 import { ILoaderDetailsResponse } from '../../../lib/interfaces/IDetails';
 
