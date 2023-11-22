@@ -8,15 +8,15 @@ Dansbandsveckan
 Göteborgsvarvet
 Stockholms maraton
 Vasaloppet
-☐ Applikationen ska innehålla
-☐ En startsida, som t ex visar var någonstans Eventet går av stapeln med datum och tidpunkter.
-☐ En sida med listning av intresse områden för Eventet.
-☐ En sida som presenterar mer detaljer om ett visst valt område
-☐ En sida med möjlighet att köpa biljetter
+✔ Applikationen ska innehålla @done(23-11-22 13:37)
+✔ En startsida, som t ex visar var någonstans Eventet går av stapeln med datum och tidpunkter. @done(23-11-22 13:36)
+✔ En sida med listning av intresse områden för Eventet. @done(23-11-22 13:36)
+✔ En sida som presenterar mer detaljer om ett visst valt område @done(23-11-22 13:36)
+✔ En sida med möjlighet att köpa biljetter @done(23-11-22 13:36)
 Utförande
-☐ Applikationen ska bestå av en klient del som ska vara skriven i React och med TypeScript 
-☐ samt en backend del som ska vara utvecklad med Node.js och express. 
-☐ Som databas för lagring av information kan t ex en json fil användas, t ex tillsammans med json-server.
+✔ Applikationen ska bestå av en klient del som ska vara skriven i React och med TypeScript @done(23-11-22 13:36)
+✔ samt en backend del som ska vara utvecklad med Node.js och express. @done(23-11-22 13:36)
+✔ Som databas för lagring av information kan t ex en json fil användas, t ex tillsammans med json-server. @done(23-11-22 13:36)
 
 Bedömning
 ☐ För Godkänt(G) krävs att applikationen fungerar, givetvis. 
