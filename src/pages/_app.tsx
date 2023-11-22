@@ -12,17 +12,17 @@ export default function Layout() {
 			<div className="min-h-screen">
 				<header>
 					<nav className="border-1 flex items-center justify-center gap-12 border-black bg-black bg-gradient-to-b from-black to-[#0a1518] pt-4">
-						<Link className="nav-button" to="/">
+						<Link className="nav-button" to="/" unstable_viewTransition>
 							Home
 						</Link>
-						<Link className="nav-button" to="/areas">
+						<Link className="nav-button" to="/areas" unstable_viewTransition>
 							Areas
 						</Link>
-						<Link className="nav-button" to="/tickets">
+						<Link className="nav-button" to="/tickets" unstable_viewTransition>
 							Tickets
 						</Link>
 						{data && data.length !== 0 ?
-							<Link className="nav-button" to="/my-tickets">
+							<Link className="nav-button" to="/my-tickets" unstable_viewTransition>
 								My Tickets
 							</Link>
 						:	null}
