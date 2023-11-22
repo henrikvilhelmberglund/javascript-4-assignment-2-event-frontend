@@ -13,7 +13,7 @@ export default function AreaDetails({ name, image_url: imageUrl, description }: 
 				style={{ backgroundImage: `url(${bookImage})` }}
 				className="md:hover:opacity-99 opacity-99 md:opacity-3 mt-12 bg-black bg-cover transition-all duration-500 md:w-[40vw]">
 				<div className="flex flex-col p-4">
-					{description && description.split('\n').map((paragraph) => <p className="font-elite px-4 text-black first-letter:text-lg ">{paragraph}</p>)}
+					{description && description.split('\n').map((paragraph, i) => <p key={i} className="font-elite px-4 text-black first-letter:text-lg ">{paragraph}</p>)}
 				</div>
 			</section>
 		</article>
