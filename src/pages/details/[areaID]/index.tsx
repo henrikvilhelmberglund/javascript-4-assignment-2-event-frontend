@@ -14,7 +14,7 @@ export function Loader({ params }: { params: IAreaParams }) {
 export default function Index() {
 	const { data } = useLoaderData() as ILoaderDetailsResponse;
 	return (
-		<main className="flex flex-col items-center h-screen bg-black">
+		<main className="flex h-screen flex-col items-center bg-black">
 			<AreaDetails {...data}></AreaDetails>;
 		</main>
 	);

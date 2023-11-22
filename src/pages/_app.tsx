@@ -21,11 +21,11 @@ export default function Layout() {
 						<Link className="nav-button" to="/tickets">
 							Tickets
 						</Link>
-						{data && data.length !== 0 ? (
+						{data && data.length !== 0 ?
 							<Link className="nav-button" to="/my-tickets">
 								My Tickets
 							</Link>
-						) : null}
+						:	null}
 					</nav>
 				</header>
 				<Outlet context={data} />
