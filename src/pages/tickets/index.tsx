@@ -47,7 +47,7 @@ export default function Index() {
 				<label className="text-emerald-500" htmlFor="amount">
 					Amount of tickets
 				</label>
-				<input name="ticketAmount" onChange={(e) => setTicketAmount(parseInt(e.target.value, 10))} type="number" value={ticketAmount} required />
+				<input name="ticketAmount" min="1" onChange={(e) => setTicketAmount(parseInt(e.target.value, 10))} type="number" value={ticketAmount} required />
 				<p className="text-emerald-500">Total: {totalAmount} SEK</p>
 				<button className="rounded bg-emerald-500 p-4">Purchase</button>
 			</Form>
