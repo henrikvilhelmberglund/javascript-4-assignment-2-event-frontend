@@ -1,5 +1,5 @@
 import { IDetailsData } from '../../../lib/interfaces/IDetails';
-import bookImage from '../../../../src/assets/book.webp';
+import bookImage from '/src/assets/book.webp';
 
 export default function AreaDetails({ name, image_url: imageUrl, description }: IDetailsData) {
 	return (
