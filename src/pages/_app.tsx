@@ -1,8 +1,16 @@
-import { NavLink, Outlet, useLoaderData } from 'react-router-dom';
+import { NavLink, Outlet, useLoaderData, useRouteError } from 'react-router-dom';
 import { ITicketsResponse } from '../lib/interfaces/ITickets';
+import CatchPage from './_CatchPage';
 
 export async function Loader() {
 	return fetch('http://localhost:3002/api/v1/tickets');
+}
+
+// catches errors
+export function Catch() {
+	const error = useRouteError() as Error;
+	console.error(error);
+	return <CatchPage error={error} />;
 }
 
 export default function Layout() {
@@ -29,8 +37,8 @@ export default function Layout() {
 					</nav>
 				</header>
 				<Outlet context={data} />
-        <footer className="fixed bottom-2 right-2">Footer</footer>
-        {/* putting active in UnoCSS safelist breaks stuff for some reason */}
+				<footer className="fixed bottom-2 right-2">Footer</footer>
+				{/* putting active in UnoCSS safelist breaks stuff for some reason */}
 				<aside className="active hidden"></aside>
 			</div>
 		</>
