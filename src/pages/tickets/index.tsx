@@ -53,19 +53,30 @@ export default function Index() {
 				<label className="text-emerald-500" htmlFor="name">
 					Name
 				</label>
-				<input name="name" type="text" required />
+				<input name="name" type="text" id="name" required />
 				<label className="text-emerald-500" htmlFor="email">
 					Email
 				</label>
-				<input name="email" type="email" required />
-				<select name="ticketType" onChange={(e) => setTicketType(e.target.value)} className="py-2" id="type">
+				<input name="email" type="email" id="email" required />
+				<label className="text-emerald-500" htmlFor="ticketType">
+					Ticket type
+				</label>
+				<select name="ticketType" id="ticketType" onChange={(e) => setTicketType(e.target.value)} className="py-2">
 					<option value="regular">Regular ticket (500SEK)</option>
 					<option value="photo">Ticket - professional photograph session (1500SEK)</option>
 				</select>
-				<label className="text-emerald-500" htmlFor="amount">
+				<label className="text-emerald-500" htmlFor="ticketAmount">
 					Amount of tickets
 				</label>
-				<input name="ticketAmount" min="1" onChange={(e) => setTicketAmount(parseInt(e.target.value, 10))} type="number" value={ticketAmount} required />
+				<input
+					name="ticketAmount"
+					id="ticketAmount"
+					min="1"
+					onChange={(e) => setTicketAmount(parseInt(e.target.value, 10))}
+					type="number"
+					value={ticketAmount}
+					required
+				/>
 				<p className="text-emerald-500">Total: {totalAmount} SEK</p>
 				<button className="rounded bg-emerald-500 p-4">Purchase</button>
 			</Form>
