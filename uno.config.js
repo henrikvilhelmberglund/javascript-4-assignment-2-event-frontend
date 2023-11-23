@@ -43,7 +43,13 @@ export default defineConfig({
 			order: -1,
 		},
 	],
-	theme: {},
+  theme: {
+    animation: {
+      keyframes: {
+        'slide-out-down-custom': '{from{transform:translate3d(0,0,0);opacity:1}to{visibility:hidden;transform:translate3d(0,100%,0);opacity:0}}',
+      }
+    }
+  },
 	presets: [
 		presetUno({ dark: 'class' }),
 		presetForms(),
