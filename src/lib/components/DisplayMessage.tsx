@@ -5,23 +5,13 @@ type DisplayMessageProps = {
 	duration: number;
 };
 
-export default function DisplayMessage({ text, duration }: DisplayMessageProps) {
+export default function DisplayMessage({ text }: DisplayMessageProps) {
 	const [isVisible, setIsVisible] = useState(true);
-
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setIsVisible(false);
-		}, duration);
-
-		return () => {
-			clearTimeout(timer);
-		};
-	}, [duration]);
 
 	return (
 		<>
 			{isVisible && text !== '' ?
-				<div className="animate-delay-0.5s keyframes-fade-out absolute left-[50%] top-[80%] animate-[fade-out_0.6s_ease-out_1] rounded bg-green-500 p-4">
+				<div className="outline-solid absolute -left-40 top-0 w-max animate-[slide-out-down-custom_1.0s_ease-out_1] rounded bg-green-500 p-4 outline-1 outline-black">
 					<p className="text-2xl text-black">{text}</p>
 				</div>
 			:	null}
