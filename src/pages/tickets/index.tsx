@@ -3,9 +3,14 @@ import indexImage from '/src/assets/andree-wallin-1118.webp';
 import { ActionFunctionArgs, Form } from 'react-router-dom';
 import DisplayMessage from '../../lib/components/DisplayMessage';
 
+interface IMessageTextObject {
+	text: string;
+	id: number;
+}
+
 const ticketTypeAtom = atom<string>('regular');
 const ticketAmountAtom = atom<number>(1);
-const messageTextAtom = atom<string>('');
+const messageTextAtom = atom<IMessageTextObject[]>([]);
 
 export async function Action({ request }: ActionFunctionArgs) {
 	const defaultStore = getDefaultStore();
@@ -17,19 +22,14 @@ export async function Action({ request }: ActionFunctionArgs) {
 
 	const response = await fetch('http://localhost:3002/api/v1/tickets', { method: 'POST', body: postFormData, headers: { 'content-type': 'application/json' } });
 	const result = await response.json();
-	console.log(result);
 	if (result.statusCode === 201) {
 		console.log(defaultStore.get(messageTextAtom));
-    if (defaultStore.get(messageTextAtom) !== '') {
-      // TODO fix this, make a message appear each time button is clicked nicely somehow
-			defaultStore.set(messageTextAtom, '');
-		}
-		console.info('nice');
-		defaultStore.set(messageTextAtom, 'Successfully bought tickets!');
+		const message = { text: 'Successfully bought tickets!', id: new Date().getTime() };
+		defaultStore.set(messageTextAtom, [...defaultStore.get(messageTextAtom), message]);
 
 		setTimeout(() => {
-			defaultStore.set(messageTextAtom, '');
-		}, 1100);
+			defaultStore.set(messageTextAtom, [...defaultStore.get(messageTextAtom).slice(1)]);
+		}, 900);
 	}
 
 	return Object.fromEntries(formData);
@@ -69,9 +69,7 @@ export default function Index() {
 				<p className="text-emerald-500">Total: {totalAmount} SEK</p>
 				<button className="rounded bg-emerald-500 p-4">Purchase</button>
 			</Form>
-			{messageText !== '' ?
-				<DisplayMessage duration={1000} text={messageText} />
-			:	null}
+			<div className="relative">{messageText && messageText.map((message) => <DisplayMessage key={message.id} duration={1000} text={message.text} />)}</div>
 		</main>
 	);
 }
