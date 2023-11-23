@@ -12,7 +12,7 @@ export default function Ticket({ id, name, email, ticketType, ticketAmount }: IT
 				<p>{email}</p>
 			</div>
 			<Form action="/my-tickets?index" method="DELETE">
-				<input type="text" className="hidden" value={id.toString()} name="id" />
+				<input type="text" className="hidden" defaultValue={id.toString()} name="id" />
 				<button className="absolute right-0 top-0 text-4xl">❌</button>
 			</Form>
 		</article>
