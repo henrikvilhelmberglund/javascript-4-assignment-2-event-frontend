@@ -22,7 +22,7 @@ Stuff that needs to be done:
   ✔ Add routes and components that display data @done(23-11-20 14:28)
   ✔ Add /tickets route @done(23-11-22 13:36)
   ✔ Add loaders/actions for the things that need it (/details/:area, /tickets) @done(23-11-22 13:36)
-  ☐ Add unit tests
-  ☐ Add integration test
+  ✔ Add unit tests @done(23-11-23 16:54)
+  ✔ Add integration test @done(23-11-23 16:55)
   ☐ Add end to end test
   ☐ Mobile styling
