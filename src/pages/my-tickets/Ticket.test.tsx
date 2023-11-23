@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter, MemoryRouter, Route, RouterProvider, Routes, createMemoryRouter } from 'react-router-dom';
+import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 import Ticket from './Ticket';
-import Index from '.';
 
 const mockTicket = {
 	id: 1,
@@ -11,13 +10,21 @@ const mockTicket = {
 	ticketAmount: 2,
 };
 
-test('renders ticket information', () => {
-	const router = createMemoryRouter([{ path: '/', element: <Ticket {...mockTicket} /> }], { initialEntries: ['/'] });
+describe('renders ticket information', () => {
+	beforeEach(() => {
+		const router = createMemoryRouter([{ path: '/', element: <Ticket {...mockTicket} /> }], { initialEntries: ['/'] });
+		render(<RouterProvider router={router} />);
+	});
 
-	render(<RouterProvider router={router} />);
-
-	// Verify that the rendered information is correct
-	expect(screen.getByText(`CthulhuCon ${mockTicket.ticketType} x${mockTicket.ticketAmount}`)).toBeInTheDocument();
-	expect(screen.getByText(mockTicket.name)).toBeInTheDocument();
-	expect(screen.getByText(mockTicket.email)).toBeInTheDocument();
+	it('renders ticket type and ticket amount', () => {
+		expect(screen.getByText(`CthulhuCon ${mockTicket.ticketType} x${mockTicket.ticketAmount}`)).toBeInTheDocument();
+  });
+  
+	it('renders ticket holder name', () => {
+		expect(screen.getByText(mockTicket.name)).toBeInTheDocument();
+  });
+  
+	it('renders ticket holder email', () => {
+		expect(screen.getByText(mockTicket.email)).toBeInTheDocument();
+	});
 });
