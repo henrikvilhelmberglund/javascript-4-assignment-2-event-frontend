@@ -1,8 +1,5 @@
-import { useState } from 'react';
-
 type DisplayMessageProps = {
 	text: string;
-	duration: number;
 };
 
 export default function DisplayMessage({ text }: DisplayMessageProps) {
