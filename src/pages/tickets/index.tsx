@@ -31,14 +31,14 @@ export async function Action({ request }: ActionFunctionArgs) {
 		}, 2000);
 	}
 
-  // return can be used with useActionData but not really used here
+	// return can be used with useActionData but not really used here
 	return Object.fromEntries(formData);
 }
 
 export default function Index() {
 	const [ticketType, setTicketType] = useAtom(ticketTypeAtom);
 	const [ticketAmount, setTicketAmount] = useAtom(ticketAmountAtom);
-	const [messageText, setMessageText] = useAtom(messageTextAtom);
+	const [messageText] = useAtom(messageTextAtom);
 
 	const totalAmount: number = ticketType === 'regular' ? ticketAmount * 500 : ticketAmount * 1500;
 
