@@ -23,15 +23,15 @@ export async function Action({ request }: ActionFunctionArgs) {
 	const response = await fetch('http://localhost:3002/api/v1/tickets', { method: 'POST', body: postFormData, headers: { 'content-type': 'application/json' } });
 	const result = await response.json();
 	if (result.statusCode === 201) {
-		console.log(defaultStore.get(messageTextAtom));
 		const message = { text: 'Successfully bought tickets!', id: new Date().getTime() };
 		defaultStore.set(messageTextAtom, [...defaultStore.get(messageTextAtom), message]);
 
 		setTimeout(() => {
 			defaultStore.set(messageTextAtom, [...defaultStore.get(messageTextAtom).slice(1)]);
-		}, 900);
+		}, 2000);
 	}
 
+  // return can be used with useActionData but not really used here
 	return Object.fromEntries(formData);
 }
 
@@ -69,7 +69,7 @@ export default function Index() {
 				<p className="text-emerald-500">Total: {totalAmount} SEK</p>
 				<button className="rounded bg-emerald-500 p-4">Purchase</button>
 			</Form>
-			<div className="relative">{messageText && messageText.map((message) => <DisplayMessage key={message.id} duration={1000} text={message.text} />)}</div>
+			<div className="relative">{messageText && messageText.map((message) => <DisplayMessage key={message.id} text={message.text} />)}</div>
 		</main>
 	);
 }
