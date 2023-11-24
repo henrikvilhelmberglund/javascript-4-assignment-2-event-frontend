@@ -18,10 +18,10 @@ export default function CatchPage({ error }: { error: Error }) {
 				</nav>
 			</header>
 			<main style={{ backgroundImage: `url(${indexImage})` }} className={`flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
-				<h1 className="font-heading drop-shadow-color-black pt-8 text-7xl text-emerald-500 drop-shadow-lg">An error has occured: {error.name}</h1>
-				<h2 className="font-elite mt-6 text-3xl text-emerald-500">Please try again or contact support. ({error.message})</h2>
+				<h1 className="my-h1">An error has occured: {error.name}</h1>
+				<h2 className="my-h2">Please try again or contact support. ({error.message})</h2>
 			</main>
-			<footer className="fixed bottom-2 right-2">Footer</footer>
+			<footer className="relative w-full bg-black pr-2 text-right text-emerald-500">© CthulhuCon 2023</footer>
 			{/* putting active in UnoCSS safelist breaks stuff for some reason */}
 			<aside className="active hidden"></aside>
 		</div>
