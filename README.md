@@ -6,7 +6,7 @@ Enkel(?) SPA med React+Vite+Generouted!
 
 Jag provade Jotai för att se hur det fungerade men använde inte jättemånga fancy features. Det verkade lättare att förstå än Redux iallafall!
 
-Jag använder också React Routers `Loader` och `Action`-funktioner för att fetcha och skicka formdata till API. Känns trevligare än UseEffect!
+Jag använder också React Routers `Loader` och `Action`-funktioner för att fetcha och skicka formdata till API. Känns trevligare än useEffect!
 
 ## Kommandon
 
