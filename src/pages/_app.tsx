@@ -1,8 +1,8 @@
-import { NavLink, Outlet, useLoaderData, useRouteError } from 'react-router-dom';
+import { type LoaderFunction, NavLink, Outlet, useLoaderData, useRouteError } from 'react-router-dom';
 import { ITicketsResponse } from '../lib/interfaces/ITickets';
 import CatchPage from './_CatchPage';
 
-export async function Loader() {
+export const Loader: LoaderFunction = () => {
 	return fetch('http://localhost:3002/api/v1/tickets');
 }
 

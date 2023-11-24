@@ -12,7 +12,7 @@ const ticketTypeAtom = atom<string>('regular');
 const ticketAmountAtom = atom<number>(1);
 const messageTextAtom = atom<IMessageTextObject[]>([]);
 
-export async function Action({ request }: ActionFunctionArgs) {
+export const Action = async ({ request }: ActionFunctionArgs) => {
 	const defaultStore = getDefaultStore();
 
 	let formData = await request.formData();
@@ -33,7 +33,7 @@ export async function Action({ request }: ActionFunctionArgs) {
 
 	// return can be used with useActionData but not really used here
 	return Object.fromEntries(formData);
-}
+};
 
 export default function Index() {
 	const [ticketType, setTicketType] = useAtom(ticketTypeAtom);

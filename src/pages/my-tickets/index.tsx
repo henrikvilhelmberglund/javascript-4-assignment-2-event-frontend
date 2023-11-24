@@ -7,18 +7,18 @@ import Ticket from './Ticket';
 // 	return fetch('http://localhost:3002/api/v1/tickets');
 // }
 
-export async function Action({ request }: ActionFunctionArgs) {
+export const Action = async ({ request }: ActionFunctionArgs) => {
 	const formData = await request.formData();
 	const id = formData.get('id');
 	return fetch(`http://localhost:3002/api/v1/tickets/${id}`, { method: 'DELETE' });
-}
+};
 
 export default function Index() {
 	// seems like useRouteLoaderData doesn't really work for the app layout for now
 	// const data = useRouteLoaderData('/') as ITicketsResponse;
 	const data = useOutletContext() as ITicket[];
 	return (
-		<main style={{ backgroundImage: `url(${indexImage})` }}  className={`flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
+		<main style={{ backgroundImage: `url(${indexImage})` }} className={`flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
 			<h1 className="font-heading drop-shadow-color-black pt-8 text-7xl text-emerald-500 drop-shadow-lg">My tickets</h1>
 			<div className="mt-10 flex  flex-col justify-between gap-16">
 				{data.length ?
