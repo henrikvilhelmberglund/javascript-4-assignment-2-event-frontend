@@ -25,5 +25,7 @@ Stuff that needs to be done:
   ✔ Add unit tests @done(23-11-23 16:54)
   ✔ Add integration test @done(23-11-23 16:55)
   ✔ Mobile styling @done(23-11-24 16:48)
-  ☐ Add end to end test
-  ☐ accessibility/SEO
+  ✔ Add end to end test @done(23-11-24 17:58)
+  ✔ accessibility/SEO @done(23-11-24 17:58)
+  ✔ set VITE_HENRIK_PC to 0 in .env @done(23-11-24 18:02)
+  ☐ add readme
