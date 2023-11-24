@@ -13,7 +13,7 @@ export const Action = async ({ request }: ActionFunctionArgs) => {
 	const defaultStore = getDefaultStore();
 
 	let formData = await request.formData();
-	console.log(Object.fromEntries(formData));
+	// console.log(Object.fromEntries(formData));
 
 	let postFormData = JSON.stringify(Object.fromEntries(formData));
 
