@@ -3,11 +3,7 @@ import indexImage from '/src/assets/andree-wallin-1118.webp';
 import { ActionFunctionArgs, Form } from 'react-router-dom';
 import DisplayMessage from '../../lib/components/DisplayMessage';
 import { FETCH_URL } from '../../lib/constants';
-
-interface IMessageTextObject {
-	text: string;
-	id: number;
-}
+import { IMessageTextObject } from '../../lib/sharedAtoms';
 
 const ticketTypeAtom = atom<string>('regular');
 const ticketAmountAtom = atom<number>(1);
@@ -29,7 +25,7 @@ export const Action = async ({ request }: ActionFunctionArgs) => {
 
 		setTimeout(() => {
 			defaultStore.set(messageTextAtom, [...defaultStore.get(messageTextAtom).slice(1)]);
-		}, 2000);
+		}, 1400);
 	}
 
 	// return can be used with useActionData but not really used here
