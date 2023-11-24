@@ -3,9 +3,10 @@ import indexImage from '/src/assets/andree-wallin-1118.webp';
 import { ILoaderAreasResponse } from '../../lib/interfaces/IAreas';
 import Area from './_Area';
 import type { LoaderFunction } from 'react-router';
+import { FETCH_URL } from '../../lib/constants';
 
 export const Loader: LoaderFunction = () => {
-	return fetch('http://localhost:3002/api/v1/areas');
+	return fetch(`http://${FETCH_URL}:3002/api/v1/areas`);
 };
 
 export default function Index() {

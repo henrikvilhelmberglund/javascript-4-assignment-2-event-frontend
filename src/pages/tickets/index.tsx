@@ -2,6 +2,7 @@ import { atom, getDefaultStore, useAtom } from 'jotai';
 import indexImage from '/src/assets/andree-wallin-1118.webp';
 import { ActionFunctionArgs, Form } from 'react-router-dom';
 import DisplayMessage from '../../lib/components/DisplayMessage';
+import { FETCH_URL } from '../../lib/constants';
 
 interface IMessageTextObject {
 	text: string;
@@ -20,7 +21,7 @@ export const Action = async ({ request }: ActionFunctionArgs) => {
 
 	let postFormData = JSON.stringify(Object.fromEntries(formData));
 
-	const response = await fetch('http://localhost:3002/api/v1/tickets', { method: 'POST', body: postFormData, headers: { 'content-type': 'application/json' } });
+	const response = await fetch(`http://${FETCH_URL}:3002/api/v1/tickets`, { method: 'POST', body: postFormData, headers: { 'content-type': 'application/json' } });
 	const result = await response.json();
 	if (result.statusCode === 201) {
 		const message = { text: 'Successfully bought tickets!', id: new Date().getTime() };

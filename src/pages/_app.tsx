@@ -1,9 +1,10 @@
 import { type LoaderFunction, NavLink, Outlet, useLoaderData, useRouteError } from 'react-router-dom';
 import { ITicketsResponse } from '../lib/interfaces/ITickets';
 import CatchPage from './_CatchPage';
+import { FETCH_URL } from '../lib/constants';
 
 export const Loader: LoaderFunction = () => {
-	return fetch('http://localhost:3002/api/v1/tickets');
+	return fetch(`http://${FETCH_URL}:3002/api/v1/tickets`);
 }
 
 // catches errors

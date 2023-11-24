@@ -11,7 +11,7 @@ export default function Index() {
 				<span className="text-emerald-300"> 2023-11-25. </span>
 				Don't miss it!
 			</h2>
-			<div className="font-elite border-1 mt-20 w-[75%] md:w-[45%] rounded border-emerald-500 p-4 text-emerald-500 backdrop-blur-md">
+			<div className="font-elite border-1 mt-20 w-[75%] md:w-[45%] rounded border-emerald-500 p-4 text-emerald-500 md:backdrop-blur-md">
 				<p className="mb-2 text-2xl font-extrabold">Schedule</p>
 				<p>09:00 CthulhuCon opens</p>
 				<p>10:00 Signing event at book area</p>

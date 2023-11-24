@@ -2,15 +2,12 @@ import { ActionFunctionArgs, useOutletContext } from 'react-router-dom';
 import { ITicket } from '../../lib/interfaces/ITickets';
 import indexImage from '/src/assets/andree-wallin-1118.webp';
 import Ticket from './Ticket';
-
-// export function Loader() {
-// 	return fetch('http://localhost:3002/api/v1/tickets');
-// }
+import { FETCH_URL } from '../../lib/constants';
 
 export const Action = async ({ request }: ActionFunctionArgs) => {
 	const formData = await request.formData();
 	const id = formData.get('id');
-	return fetch(`http://localhost:3002/api/v1/tickets/${id}`, { method: 'DELETE' });
+	return fetch(`http://${FETCH_URL}:3002/api/v1/tickets/${id}`, { method: 'DELETE' });
 };
 
 export default function Index() {
