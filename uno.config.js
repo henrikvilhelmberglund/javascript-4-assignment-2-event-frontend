@@ -17,8 +17,10 @@ export default defineConfig({
 	],
 	shortcuts: [
 		{
-			'nav-button': 'rounded-lg p-4 font-elite text-emerald-500 hover:underline underline-none underline-1 underline-offset-4 transition-all text-4xl',
+			'nav-button': 'rounded-lg p-1 md:p-4 font-elite text-emerald-500 hover:underline underline-none underline-1 underline-offset-4 transition-all text-xl md:text-4xl',
 			active: 'text-emerald-300',
+			'my-h1': 'font-heading drop-shadow-color-black pt-8 text-4xl text-emerald-500 drop-shadow-lg md:text-7xl',
+			'my-h2': 'p-2 font-elite mt-6 text-xl text-emerald-500 md:text-3xl',
 		},
 		[/^btn-(.*)$/, ([, c]) => `bg-${c}-400 text-${c}-800 text-xl p-4 rounded-lg transition-all hover:bg-${c}-300`],
 	],
@@ -43,13 +45,13 @@ export default defineConfig({
 			order: -1,
 		},
 	],
-  theme: {
-    animation: {
-      keyframes: {
-        'slide-out-down-custom': '{from{transform:translate3d(0,0,0);opacity:1}to{visibility:hidden;transform:translate3d(0,100%,0);opacity:0}}',
-      }
-    }
-  },
+	theme: {
+		animation: {
+			keyframes: {
+				'slide-out-down-custom': '{from{transform:translate3d(0,0,0);opacity:1}to{visibility:hidden;transform:translate3d(0,100%,0);opacity:0}}',
+			},
+		},
+	},
 	presets: [
 		presetUno({ dark: 'class' }),
 		presetForms(),

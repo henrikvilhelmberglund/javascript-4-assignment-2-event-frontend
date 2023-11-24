@@ -11,7 +11,7 @@ export const Loader: LoaderFunction = ({ params }) => {
 export default function Index() {
 	const { data } = useLoaderData() as ILoaderDetailsResponse;
 	return (
-		<main className="flex h-screen flex-col items-center bg-black">
+		<main className="flex md:h-screen flex-col items-center bg-black">
 			<AreaDetails {...data}></AreaDetails>;
 		</main>
 	);

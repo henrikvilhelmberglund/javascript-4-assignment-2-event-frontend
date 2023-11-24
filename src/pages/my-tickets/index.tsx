@@ -19,7 +19,7 @@ export default function Index() {
 	const data = useOutletContext() as ITicket[];
 	return (
 		<main style={{ backgroundImage: `url(${indexImage})` }} className={`flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
-			<h1 className="font-heading drop-shadow-color-black pt-8 text-7xl text-emerald-500 drop-shadow-lg">My tickets</h1>
+			<h1 className="my-h1">My tickets</h1>
 			<div className="mt-10 flex  flex-col justify-between gap-16">
 				{data.length ?
 					<>{data && data.map((ticket) => <Ticket key={ticket.id} {...ticket}></Ticket>)}</>

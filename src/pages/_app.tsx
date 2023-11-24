@@ -19,7 +19,7 @@ export default function Layout() {
 		<>
 			<div className="min-h-screen">
 				<header>
-					<nav className="border-1 flex items-center justify-center gap-12 border-black bg-black bg-gradient-to-b from-black to-[#0a1518] pt-4">
+					<nav className="border-1 flex items-center justify-center gap-2 md:gap-12 border-black bg-black bg-gradient-to-b from-black to-[#0a1518] pt-4">
 						<NavLink className="nav-button" to="/" unstable_viewTransition>
 							Home
 						</NavLink>
@@ -37,7 +37,7 @@ export default function Layout() {
 					</nav>
 				</header>
 				<Outlet context={data} />
-				<footer className="fixed bottom-2 right-2">Footer</footer>
+				<footer className="relative text-right pr-2 bg-black w-full text-emerald-500">© CthulhuCon 2023</footer>
 				{/* putting active in UnoCSS safelist breaks stuff for some reason */}
 				<aside className="active hidden"></aside>
 			</div>

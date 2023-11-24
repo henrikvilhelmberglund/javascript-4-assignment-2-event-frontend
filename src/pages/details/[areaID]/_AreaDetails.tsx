@@ -5,8 +5,8 @@ export default function AreaDetails({ name, image_url: imageUrl, description }: 
 	return (
 		<article
 			style={{ backgroundImage: `url(${imageUrl})` }}
-			className="outline-solid flex h-[80vh] w-full flex-col items-center bg-black/70 bg-cover bg-blend-multiply">
-			<h2 className="font-elite relative top-6 w-96 text-center text-5xl text-emerald-500">{name}</h2>
+			className="outline-solid flex md:h-[80vh] w-full flex-col items-center bg-black/70 bg-cover bg-blend-multiply">
+			<h2 className="my-h2">{name}</h2>
 			{/* TODO display always on mobile */}
 			<img src={imageUrl} className="md:hidden" alt="" />
 			<section
