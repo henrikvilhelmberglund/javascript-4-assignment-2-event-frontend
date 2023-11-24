@@ -17,7 +17,8 @@ export default defineConfig({
 	],
 	shortcuts: [
 		{
-			'nav-button': 'rounded-lg p-1 md:p-4 font-elite text-emerald-500 hover:underline underline-none underline-1 underline-offset-4 transition-all text-xl md:text-4xl',
+			'nav-button':
+				'rounded-lg p-1 md:p-4 font-elite text-emerald-500 text-center hover:underline underline-none underline-1 underline-offset-4 transition-all text-xl md:text-4xl',
 			active: 'text-emerald-300',
 			'my-h1': 'font-heading drop-shadow-color-black pt-8 text-4xl text-emerald-500 drop-shadow-lg md:text-7xl',
 			'my-h2': 'p-2 font-elite mt-6 text-xl text-emerald-500 md:text-3xl',
