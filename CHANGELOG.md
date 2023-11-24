@@ -2,6 +2,56 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.0](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/compare/v0.0.2...v1.0.0) (2023-11-24)
+
+
+### Tests
+
+* add HelmetProvider since I started using Helmet in the components ([5ff40d1](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/5ff40d1ca424189913725e07c6135bd37de070a0))
+
+
+### Features:
+
+* update README ([b9b701c](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/b9b701c951e24963e6c54b9df6b919e93b8353ca))
+* add ! ([b3020d1](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/b3020d1c05a7dad1f2a356bc7b4b03a7b2253822))
+* add silly end to end test ([46268a6](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/46268a65e9a6b0aaa88bf6a77ed047cd08015ffe))
+* use Helmet to add HTML head titles for all the pages ([bb110d3](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/bb110d30891f8dd6d0ab2694711c89fb82186608))
+* use HelmetProvider in main.jsx ([91ddcd5](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/91ddcd5549439c23c06d8ecfc7771d808b7e8469))
+* add react-helmet-async to give titles to the pages ([a3092d5](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/a3092d5ac0b15d75ed448abe7bf1424ac0b8f28a))
+* display message when deleting tickets ([f4f9e9d](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/f4f9e9d91c04fffb74cb16cc2cfef536f1103ff3))
+* put message atom in sharedAtoms.ts ([d392fbd](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/d392fbd418d8ab0865b017e2845e400db80a5338))
+* add FETCH_URL constant and use that to test on mobile ([59590a0](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/59590a06b8559d0925831a7e3de33836cf0955dc))
+* host vite server to test on mobile, add .env.example ([8797332](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/87973322e20c7d0c3361c5607f5d302bda56b9ae))
+* update .gitignore ([2d43984](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/2d439846cae91a0e448f9724ebb28ef8949452c8))
+* mobile styling ([a10eb0d](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/a10eb0d45f1446294097c6681376004582c06b93))
+* use arrow function syntax to use function type annotations ([0119863](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/0119863681828ce42e28bd00407c7b1509326a92))
+
+
+### Bug Fixes
+
+* typo ([a6dbe49](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/a6dbe49ebcbe42e9298061719d24e387f61580be))
+* add xl breakpoint and change sm to lg for better responsiveness ([1b0a40d](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/1b0a40dd2f157c4388d05750aaa916615f4fafeb))
+* make areas loader test more typescripty ([bbde291](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/bbde29156bb7884e2e1819222d2cb55c27b99cc0))
+* update package.json ([42797ad](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/42797ad4195f1fbfa6acc94705ef159f61ac6646))
+* comment out console log ([991e925](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/991e9253b2ad9b996b7b50d85ddfc3d9f108c251))
+* hide NaN in totalAmount ([2348c28](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/2348c2836d6bcc5db8fa85f6be7549a994954a25))
+* rename Ticket.tsx to _Ticket.tsx because it should not be a route ([275407a](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/275407a99a43c056e31b7c2d10a1d9ad2bf79a78))
+* use my-h1 and my-h2 in 404.tsx and _CatchPage.tsx ([b1f5e95](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/b1f5e95e6ab06c37d2b08a4e6c1d1cd3b4d2413f))
+* rename main.jsx to main.tsx ([c5f288c](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/c5f288c415ef919673be96fa0cc0f369f43df800))
+* add ? to shouldRevalidate thingy which I'm not using anyway ([2cbf480](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/2cbf480ce81cf4515d00b85e51f4bb1731ec358f))
+* remove interface import ([266f761](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/266f761a119f63cf071cc2d8d833ff8073a05f60))
+* actually import the atom ([f4251ed](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/f4251ed4090c8d7e0f4dd8cfd542be3f85431a32))
+* mobile styling ([211f8a4](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/211f8a42d1086df9e4695cde99a4ec7041bf0b81))
+* add keyframes-slide-out-down-custom because animate is using an arbitrary animation ([35dacd7](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/35dacd7e6bc3668785f8c8fd88151276b527f52d))
+* center text in navlink ([36ee53b](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/36ee53b820af4b1e95245cacf5ab61c2ebb63adc))
+* fix script name ([7d5b4e8](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/7d5b4e8ddd2c55a50382b8e4a9def9010209318d))
+
+
+### Documentation:
+
+* update readme ([fcc0608](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/fcc06087bc2a492e343633f394bfeaf1504343cb))
+* update todo ([24fda03](https://github.com/henrikvilhelmberglund/javascript-4-assignment-2-event-frontend/commit/24fda03358660aadec1bf014d8104751c5a1ea6d))
+
 ## 0.0.2 (2023-11-23)
 
 
