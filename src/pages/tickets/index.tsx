@@ -81,7 +81,7 @@ export default function Index() {
 					value={ticketAmount}
 					required
 				/>
-				<p className="text-emerald-500">Total: {totalAmount} SEK</p>
+				<p className="text-emerald-500">Total: {totalAmount ? totalAmount : "..."} SEK</p>
 				<button className="rounded bg-emerald-500 p-4">Purchase</button>
 			</Form>
 			<div className="relative">{messageText && messageText.map((message) => <DisplayMessage key={message.id} text={message.text} />)}</div>
