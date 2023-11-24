@@ -5,7 +5,7 @@ import { FETCH_URL } from '../lib/constants';
 
 export const Loader: LoaderFunction = () => {
 	return fetch(`http://${FETCH_URL}:3002/api/v1/tickets`);
-}
+};
 
 // catches errors
 export function Catch() {
@@ -20,7 +20,7 @@ export default function Layout() {
 		<>
 			<div className="min-h-screen">
 				<header>
-					<nav className="border-1 flex items-center justify-center gap-2 md:gap-12 border-black bg-black bg-gradient-to-b from-black to-[#0a1518] pt-4">
+					<nav className="border-1 flex items-center justify-center gap-2 border-black bg-black bg-gradient-to-b from-black to-[#0a1518] pt-4 md:gap-12">
 						<NavLink className="nav-button" to="/" unstable_viewTransition>
 							Home
 						</NavLink>
@@ -38,7 +38,7 @@ export default function Layout() {
 					</nav>
 				</header>
 				<Outlet context={data} />
-				<footer className="relative text-right pr-2 bg-black w-full text-emerald-500">© CthulhuCon 2023</footer>
+				<footer className="relative w-full bg-black pr-2 text-right text-emerald-500">© CthulhuCon 2023</footer>
 				{/* putting active in UnoCSS safelist breaks stuff for some reason */}
 				<aside className="active hidden"></aside>
 			</div>
