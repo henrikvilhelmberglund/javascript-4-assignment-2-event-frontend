@@ -91,7 +91,7 @@ const app = {
   Component: _app?.default ? App : Outlet,
   ErrorBoundary: _app?.Catch,
   loader: _app?.Loader,
-  shouldRevalidate: _app.ShouldRevalidate, // ← }
+  shouldRevalidate: _app?.ShouldRevalidate, // ← }
 };
 const fallback = { path: "*", Component: _404?.default || Fragment };
 
