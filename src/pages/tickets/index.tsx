@@ -3,11 +3,10 @@ import indexImage from '/src/assets/andree-wallin-1118.webp';
 import { ActionFunctionArgs, Form } from 'react-router-dom';
 import DisplayMessage from '../../lib/components/DisplayMessage';
 import { FETCH_URL } from '../../lib/constants';
-import { IMessageTextObject } from '../../lib/sharedAtoms';
+import { IMessageTextObject, messageTextAtom } from '../../lib/sharedAtoms';
 
 const ticketTypeAtom = atom<string>('regular');
 const ticketAmountAtom = atom<number>(1);
-const messageTextAtom = atom<IMessageTextObject[]>([]);
 
 export const Action = async ({ request }: ActionFunctionArgs) => {
 	const defaultStore = getDefaultStore();
