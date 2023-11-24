@@ -4,6 +4,7 @@ import { ActionFunctionArgs, Form } from 'react-router-dom';
 import DisplayMessage from '../../lib/components/DisplayMessage';
 import { FETCH_URL } from '../../lib/constants';
 import { messageTextAtom } from '../../lib/sharedAtoms';
+import { Helmet } from 'react-helmet-async';
 
 const ticketTypeAtom = atom<string>('regular');
 const ticketAmountAtom = atom<number>(1);
@@ -16,7 +17,11 @@ export const Action = async ({ request }: ActionFunctionArgs) => {
 
 	let postFormData = JSON.stringify(Object.fromEntries(formData));
 
-	const response = await fetch(`http://${FETCH_URL}:3002/api/v1/tickets`, { method: 'POST', body: postFormData, headers: { 'content-type': 'application/json' } });
+	const response = await fetch(`http://${FETCH_URL}:3002/api/v1/tickets`, {
+		method: 'POST',
+		body: postFormData,
+		headers: { 'content-type': 'application/json' },
+	});
 	const result = await response.json();
 	if (result.statusCode === 201) {
 		const message = { text: 'Successfully bought tickets!', id: new Date().getTime() };
@@ -40,12 +45,15 @@ export default function Index() {
 
 	return (
 		<main style={{ backgroundImage: `url(${indexImage})` }} className={`flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
+			<Helmet>
+				<title>CthulhuCon - Purchase tickets</title>
+			</Helmet>
 			<h1 className="my-h1">Tickets</h1>
 			<h2 className="my-h2">Make sure to purchase your tickets in time.</h2>
 			<Form
 				action="/tickets?index"
 				method="POST"
-				className="font-elite border-1 mt-20 flex w-[75%] md:w-[25%] flex-col gap-2 rounded border-emerald-500 p-4 text-black md:backdrop-blur-md">
+				className="font-elite border-1 mt-20 flex w-[75%] flex-col gap-2 rounded border-emerald-500 p-4 text-black md:w-[25%] md:backdrop-blur-md">
 				<label className="text-emerald-500" htmlFor="name">
 					Name
 				</label>

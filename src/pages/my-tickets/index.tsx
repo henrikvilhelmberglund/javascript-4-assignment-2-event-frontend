@@ -6,6 +6,7 @@ import { FETCH_URL } from '../../lib/constants';
 import { getDefaultStore, useAtom } from 'jotai';
 import { messageTextAtom } from '../../lib/sharedAtoms';
 import DisplayMessage from '../../lib/components/DisplayMessage';
+import { Helmet } from 'react-helmet-async';
 
 export const Action = async ({ request }: ActionFunctionArgs) => {
 	const formData = await request.formData();
@@ -30,6 +31,9 @@ export default function Index() {
 	const [messageText] = useAtom(messageTextAtom);
 	return (
 		<main style={{ backgroundImage: `url(${indexImage})` }} className={`flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
+			<Helmet>
+				<title>CthulhuCon - My tickets</title>
+			</Helmet>
 			<h1 className="my-h1">My tickets</h1>
 			<div className="mt-10 flex  flex-col justify-between gap-16">
 				{data.length ?
