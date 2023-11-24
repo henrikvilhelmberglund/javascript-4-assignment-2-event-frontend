@@ -28,7 +28,8 @@ export default function Index() {
 	// seems like useRouteLoaderData doesn't really work for the app layout for now
 	// const data = useRouteLoaderData('/') as ITicketsResponse;
 	const data = useOutletContext() as ITicket[];
-	const [messageText] = useAtom(messageTextAtom);
+  const [messageText] = useAtom(messageTextAtom);
+  
 	return (
 		<main style={{ backgroundImage: `url(${indexImage})` }} className={`flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
 			<Helmet>
