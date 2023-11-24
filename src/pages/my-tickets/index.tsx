@@ -1,7 +1,7 @@
 import { ActionFunctionArgs, useOutletContext } from 'react-router-dom';
 import { ITicket } from '../../lib/interfaces/ITickets';
 import indexImage from '/src/assets/andree-wallin-1118.webp';
-import Ticket from './Ticket';
+import Ticket from './_Ticket';
 import { FETCH_URL } from '../../lib/constants';
 import { getDefaultStore, useAtom } from 'jotai';
 import { messageTextAtom } from '../../lib/sharedAtoms';
@@ -28,8 +28,8 @@ export default function Index() {
 	// seems like useRouteLoaderData doesn't really work for the app layout for now
 	// const data = useRouteLoaderData('/') as ITicketsResponse;
 	const data = useOutletContext() as ITicket[];
-  const [messageText] = useAtom(messageTextAtom);
-  
+	const [messageText] = useAtom(messageTextAtom);
+
 	return (
 		<main style={{ backgroundImage: `url(${indexImage})` }} className={`flex min-h-screen flex-col items-center bg-black/70 bg-cover bg-blend-multiply`}>
 			<Helmet>
