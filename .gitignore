@@ -25,3 +25,6 @@ dist-ssr
 
 # Generouted
 router.ts
+
+# Environment variables
+.env
