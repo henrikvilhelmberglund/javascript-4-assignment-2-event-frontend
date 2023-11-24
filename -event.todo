@@ -24,5 +24,6 @@ Stuff that needs to be done:
   ✔ Add loaders/actions for the things that need it (/details/:area, /tickets) @done(23-11-22 13:36)
   ✔ Add unit tests @done(23-11-23 16:54)
   ✔ Add integration test @done(23-11-23 16:55)
+  ✔ Mobile styling @done(23-11-24 16:48)
   ☐ Add end to end test
-  ☐ Mobile styling
+  ☐ accessibility/SEO
