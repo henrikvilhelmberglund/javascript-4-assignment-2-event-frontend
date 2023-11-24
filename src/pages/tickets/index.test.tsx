@@ -1,11 +1,16 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Index from '.';
 
 describe('Form Rendering', () => {
 	beforeEach(() => {
 		const router = createMemoryRouter([{ path: '/', element: <Index /> }], { initialEntries: ['/'] });
-		render(<RouterProvider router={router} />);
+		render(
+			<HelmetProvider>
+				<RouterProvider router={router} />
+			</HelmetProvider>
+		);
 	});
 
 	it('renders name input', () => {
@@ -36,7 +41,11 @@ describe('Form Rendering', () => {
 describe('User Input Handling', () => {
 	beforeEach(() => {
 		const router = createMemoryRouter([{ path: '/', element: <Index /> }], { initialEntries: ['/'] });
-		render(<RouterProvider router={router} />);
+		render(
+			<HelmetProvider>
+				<RouterProvider router={router} />
+			</HelmetProvider>
+		);
 	});
 
 	it('handles user input changes', () => {
